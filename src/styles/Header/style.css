@@ -1,0 +1,129 @@
+header {
+	width: 100%;
+	height: 56px;
+
+	background-color: #0e1113;
+}
+
+a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.header-logo {
+	display: flex;
+	flex: 1 0;
+	padding-left: 10px;
+}
+
+.header-search-bar {
+	display: flex;
+	flex: 1 0;
+	justify-content: center;
+}
+
+.header-search-bar .search-wrapper {
+	width: 560px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+}
+
+.header-links {
+	display: flex;
+	flex: 1 0;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 10px;
+
+	padding-right: 10px;
+	height: 40px;
+}
+
+.navbar {
+	display: flex;
+	gap: 5px;
+	background-color: transparent;
+
+	height: 100%;
+}
+
+.header-link-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	min-width: 40px;
+	height: 40px;
+
+	border-radius: 50%;
+	overflow: hidden;
+
+	background-color: transparent;
+	transition: background-color 0.3s;
+}
+
+.header-link-button:hover {
+	background-color: #333d42; /* Додатковий стиль для hover */
+}
+
+.navbar i,
+.navbar .create,
+.navbar .profile {
+	color: #b2b6b8;
+	font-size: 20px;
+}
+.navbar .create {
+	display: flex;
+	align-items: center;
+	font-size: 18px;
+}
+.navbar .profile {
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+.navbar .profile img {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+.navbar .profile .status {
+	width: 10px;
+	height: 10px;
+	background-color: green;
+	border: 2px solid #1a1a1a;
+	border-radius: 50%;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.header-link {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.plus-icon {
+	margin-right: 5px;
+}
+
+.create-button {
+	padding: 0 10px;
+	border-radius: 20px;
+}
+
+.create span {
+	font-size: 15px;
+	color: #b2b6b8;
+}
