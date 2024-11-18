@@ -1,7 +1,7 @@
 import React from 'react';
 
 // importing styles
-import '../../styles/SearchBar/style.css';
+import '../../assets/styles/SearchBar/style.css';
 
 function SearchBar() {
 	return (
