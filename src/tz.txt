@@ -1,0 +1,36 @@
+структура дизайн
+
+ 1 ) header / footer
+     main/ sidebar(2)
+
+ 2) accunt    (auht)
+    (       Overview
+            Posts
+            Comments
+            Saved
+            Hidden
+            Upvoted
+            Downvoted
+    )
+
+ 3) create post (crud)
+
+ 4) comment
+
+ 5) roles user
+     admin
+     costomer
+     guist
+
+ 6)  chat  
+
+ ------------------//-------------------
+ admin - функціонал по crud and moderation text
+
+ costomer - comment, save post, all categories, chat, crud posts
+
+ guist - read post))
+
+розбивка проекту на таски
+
+1_ створення структури проекту
