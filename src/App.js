@@ -1,14 +1,32 @@
 import React from 'react';
-import Sidebar from './components/Sidebar';
-import Header from './component/Header';
+import Sidebar from './components/Sidebar/Sidebar';
+import Header from './components/Header';
+
+// importing styles
+import './assets/styles/App/style.css';
+
+// import pages
+import UserPage from './pages/UserPage';
 
 function App() {
-  return (
-    <div className="App" style={{ display: 'flex' }}>
-      <Sidebar />
-      <div style={{ padding: '20px', flexGrow: 1 }}> {/*  */}</div>
-    </div>
-  );
+	return (
+		<>
+			<Header />
+			<div className='App' style={{ display: 'flex' }}>
+				<Sidebar />
+
+				<div
+					style={{
+						padding: '0',
+						flex: '1 1',
+						height: '100vh',
+					}}
+				>
+					<UserPage />
+				</div>
+			</div>
+		</>
+	);
 }
 
 export default App;

@@ -4,7 +4,7 @@ import React from 'react';
 import logo from '../../assets/images/logos/reddit-logo.svg';
 
 // importing styles
-import '../../styles/Header/style.css';
+import '../../assets/styles/Header/style.css';
 
 // importing components
 import SearchBar from '../../elements/SearchBar';
@@ -28,23 +28,23 @@ function Header() {
 				</div>
 
 				<div className='header-links'>
-					<div class='navbar'>
+					<div className='navbar'>
 						<div className='header-link-button'>
 							<a href='' className='header-link'>
-								<i class='fas fa-mouse-pointer'></i>
+								<i className='fas fa-mouse-pointer'></i>
 							</a>
 						</div>
 
 						<div className='header-link-button'>
 							<a href='' className='header-link'>
-								<i class='fa-regular fa-comment-dots'></i>
+								<i className='fa-regular fa-comment-dots'></i>
 							</a>
 						</div>
 
 						<div className='header-link-button create-button'>
-							<div class='create'>
+							<div className='create'>
 								<a href='' className='header-link'>
-									<i class='fa-regular fa-plus plus-icon'></i>
+									<i className='fa-regular fa-plus plus-icon'></i>
 									<span>Create</span>
 								</a>
 							</div>
@@ -52,12 +52,12 @@ function Header() {
 
 						<div className='header-link-button'>
 							<a href='' className='header-link'>
-								<i class='fas fa-bell'></i>
+								<i className='fas fa-bell'></i>
 							</a>
 						</div>
 
 						<div className='header-link-button'>
-							<div class='profile'>
+							<div className='profile'>
 								<a href='' className='header-link'>
 									<img
 										alt='Profile picture with a pink background and a green status dot'
@@ -65,7 +65,7 @@ function Header() {
 										src='https://storage.googleapis.com/a1aa/image/PYPzl8HgT1YjERznnBBPDoBCp4rbhubfmtrxjYvqcDxEcq4JA.jpg'
 										width='30'
 									/>
-									<div class='status'></div>
+									<div className='status'></div>
 								</a>
 							</div>
 						</div>
