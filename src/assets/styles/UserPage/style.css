@@ -218,6 +218,9 @@
 	gap: 20px;
 }
 
+.user-info-block {
+}
+
 .info-wrapper {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -247,137 +250,33 @@
 	text-transform: uppercase;
 	color: #8ba2ad;
 	font-size: 0.8rem;
-	display: block;
-
-	margin-top: 0.5rem;
-}
-
-.border-top {
-	border-top: 1px solid #191919;
 }
 
 .achievements {
-	margin-top: 0.5rem;
-
 	display: flex;
 	flex-direction: row;
+
+	width: 100%;
 }
 
 .icons {
 	display: flex;
+	flex-direction: row;
+
 	position: relative;
 
 	max-width: 100px;
-	width: 100px;
-	height: 40px;
-}
-
-.achievement-icon {
-	width: 40px;
-	height: 40px;
 }
 
 .achievement-icon img {
 	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
 
 	width: 40px;
 	height: 40px;
-	cursor: pointer;
-
-	left: calc(var(--left) * 1px);
-	transition: all 0.2s linear;
-}
-
-.achievement-icon img:hover {
-	transform: translateY(-10%);
-}
-
-.text {
-	height: 40px;
-
-	display: flex;
-	flex-wrap: wrap;
-	gap: 4px;
-}
-
-.achievement-link {
-	color: #b7cad4;
-	font-size: 0.75rem;
-}
-
-.achievement-link:hover {
-	text-decoration: underline;
-}
-
-.achievements-info {
-	margin-top: 1rem;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.unlocked {
-	color: #8ba2ad;
-	font-size: 0.8rem;
-}
-
-.settings {
-	display: flex;
-	flex-direction: column;
-	gap: 1.5rem;
-
-	list-style: none;
-}
-
-.settings-item {
-	display: flex;
-	flex-direction: row;
-
-	justify-content: space-between;
-	align-items: center;
-}
-
-.user-settings {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 0.5rem;
-}
-
-.settings-icon {
-	min-width: 32px;
-	height: 32px;
-
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.settings-icon i {
-	color: #fff;
-}
-
-.settings-icon img {
-	height: 100%;
-	width: 100%;
-
-	object-fit: cover;
-	border-radius: 50%;
-}
-
-.settings-naming {
-	display: flex;
-	flex-direction: column;
-}
-
-.settings-label {
-	color: #fff;
-	font-size: 0.9rem;
-}
-
-.settings-subtext {
-	color: #5b6a72;
-	font-size: 0.75rem;
 }
 
 @media screen and (min-width: 1200px) {
