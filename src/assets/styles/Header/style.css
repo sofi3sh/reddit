@@ -3,6 +3,8 @@ header {
 	height: 56px;
 
 	background-color: #0e1113;
+
+	border-bottom: 1px solid #26282a;
 }
 
 a {
