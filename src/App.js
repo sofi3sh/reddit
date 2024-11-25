@@ -22,7 +22,7 @@ function App() {
 						height: '100vh',
 					}}
 				>
-					{/* <UserPage /> */}
+					 <UserPage />
 				</div>
 			</div>
 		</>

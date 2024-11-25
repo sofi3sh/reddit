@@ -8,7 +8,7 @@ import Button from '../../elements/Button';
 import ButtonDropMenu from '../../elements/ButtonDropMenu';
 
 // importing components
-import UserPageLayout from '../components/Profile/main';
+import UserPageLayout from '../../components/Profile/main';
 
 const UserPage = () => {
 	return (
