@@ -1,30 +1,34 @@
 .sidebar {
-	min-width: 250px;
-	padding: 10px;
-	background-color: #0e1113;
-	border-right: 1px solid #26282a;
+	height: 1143px;
+	padding: 16px 12px;
+	flex-direction: column;
+	align-items: center;
+	align-self: center;
+	background: var(--color-azure-6, #0E1113);
 }
 
 .sidebar-footer {
-	font-size: 12px;
-	color: #aaa;
-	text-align: center;
-	margin-top: 20px;
-}
-
-.sidebar-section {
-	margin-bottom: 20px;
+	color: var(--www-reddit-com-silver-chalice, var(--color-grey-67, #ACACAC));
+	font-family: var(--font-family-Font-3, "Liberation Sans");
+	font-size: var(--font-size-10, 10px);
+	font-style: normal;
+	font-weight: var(--font-weight-400, 400);
+	line-height: var(--line-height-16, 16px);
+	padding: 4px 12px;
+	margin-top: 50px;
 }
 
 .sidebar-section-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	font-size: 12px;
-	font-weight: bold;
+	font-size: var(--font-size-12, 12px);
+	font-style: normal;
+	font-weight: var(--font-weight-400, 400);
+	line-height: var(--line-height-16, 16px);
 	color: #748791;
 	cursor: pointer;
-	padding: 12px 10px;
+	padding: 5px 16px;
 	border-radius: 5px;
 	text-transform: uppercase;
 	transition: color 0.3s;
@@ -37,14 +41,18 @@
 .sidebar-section-items {
 	display: flex;
 	flex-direction: column;
-	padding-left: 10px;
+	align-items: flex-start;
+	align-self: stretch;
+	width: 100%;
 }
 
 .sidebar-item {
+	width: 217px;
+	height: 37px;
+	padding: 5px 20px;
 	display: flex;
 	align-items: center;
-	padding: 8px;
-	border-radius: 5px;
+	border-radius: 8px;
 	cursor: pointer;
 	color: #fff;
 	transition: background-color 0.3s, color 0.3s;
@@ -52,21 +60,33 @@
 
 .sidebar-item:hover {
 	background-color: #181c1f;
+	border-radius: 8px;
 }
 
 .sidebar-item.active {
-	background-color: #2a3236;
+	background-color: #2A3236;
+	border-radius: 8px;
 }
 
 .sidebar-item-icon {
-	font-size: 24px;
-	margin-right: 10px;
-	width: 25px;
-	height: 25px;
+	font-size: 20px;
+	margin-right: 15px;
+	width: 20px;
+	height: 20px;
 	color: inherit;
 }
 
 .sidebar-item-label {
-	font-size: 14px;
-	color: inherit;
+	color: var(--www-reddit-com-mystic, var(--color-azure-89, #DBE4E9));
+	font-family: var(--font-family-Font-3, "Liberation Sans");
+	font-size: var(--font-size-14, 14px);
+	font-style: normal;
+	font-weight: var(--font-weight-400, 400);
+	line-height: var(--line-height-20, 20px);
+}
+
+.line {
+	margin: 10px;
+	border-bottom: var(--stroke-weight-1, 1px) solid var(--color-white-98, rgba(255, 255, 255, 0.10));
+	
 }
