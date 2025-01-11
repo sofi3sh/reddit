@@ -6,7 +6,7 @@ import Header from './components/Header';
 import './assets/styles/App/style.css';
 
 // import pages
-import UserPage from './pages/UserPage';
+import UserPage from './pages/Menu/UserPage';
 
 function App() {
 	return (
@@ -22,7 +22,7 @@ function App() {
 						height: '100vh',
 					}}
 				>
-					<UserPage />
+					 <UserPage />
 				</div>
 			</div>
 		</>
