@@ -1,0 +1,78 @@
+
+.container_post_home {
+    width: 60%;
+    margin: 20px auto;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+.header_post_home {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.header_post_home img {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.header_post_home .subreddit {
+    font-weight: bold;
+    color: #0079d3;
+}
+.header_post_home .time {
+    color: #787c7e;
+    margin-left: 5px;
+}
+.header_post_home .tag {
+    background-color: #e9f5fd;
+    color: #0079d3;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.content {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.actions {
+    display: flex;
+    align-items: center;
+}
+.actions .action {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    color: #787c7e;
+    cursor: pointer;
+}
+.actions .action i {
+    margin-right: 5px;
+}
+.actions .action:hover {
+    color: #1c1c1c;
+}
+.join-button {
+    background-color: #0079d3;
+    color: #ffffff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: auto;
+}
+.join-button:hover {
+    background-color: #005999;
+}
+.more-options {
+    margin-left: 10px;
+    cursor: pointer;
+}
