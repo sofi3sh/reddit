@@ -6,34 +6,42 @@ import '../../assets/styles/Sidebar/Sidebar.css';
 const Sidebar = () => {
 	return (
 		<div className='sidebar'>
-			<SidebarSection title='' defaultOpen>
-				<SidebarItem icon='home' label='Home' active />
-				<SidebarItem icon='trending_up' label='Popular' />
-				<SidebarItem icon='explore' label='Explore' />
-				<SidebarItem icon='list' label='All' />
+				<SidebarItem icon='home_white' label='Home' active />
+				<SidebarItem icon='popular_white' label='Popular' />
+
+			<div className='line'></div>
+
+			<SidebarSection title='TOPICS'>
+				<SidebarItem icon='internet_culture_white' label='Internet Culture (Viral)' />
+				<SidebarItem icon='games_white' label='Games' />
+				<SidebarItem icon='q&as_white' label='Q&As' />
+				<SidebarItem icon='technology_white' label='Technology' />
+				<SidebarItem icon='pop_culture_white' label='Pop Culture' />
+				<SidebarItem icon='movies_white' label='Movies & TV' />
 			</SidebarSection>
 
-			<SidebarSection title='Custom Feeds'>
-				<SidebarItem icon='add' label='Create a custom feed' />
-			</SidebarSection>
-
-			<SidebarSection title='Recent'>
-				<SidebarItem icon='fiber_manual_record' label='r/Kommunismus' />
-				<SidebarItem icon='fiber_manual_record' label='r/ZengoWallet' />
-				<SidebarItem icon='fiber_manual_record' label='r/assetto_ahoy' />
-			</SidebarSection>
-
-			<SidebarSection title='Communities'>
-				<SidebarItem icon='add' label='Create a community' />
-				<SidebarItem icon='announcement' label='r/announcements' />
-				<SidebarItem icon='flag' label='r/de' />
-			</SidebarSection>
+			<div className='line'></div>
 
 			<SidebarSection title='Resources'>
-				<SidebarItem icon='info' label='About Reddit' />
-				<SidebarItem icon='campaign' label='Advertise' />
-				<SidebarItem icon='help' label='Help' />
+				<SidebarItem icon='about_reddit_white' label='About Reddit' />
+				<SidebarItem icon='advertise_white' label='Advertise' />
+				<SidebarItem icon='help_white' label='Help' />
+				<SidebarItem icon='blog_white' label='Blog' />
+				<SidebarItem icon='careers_white' label='Careers' />
+				<SidebarItem icon='press_white' label='Press' />
 			</SidebarSection>
+
+			<div className='line'></div>
+
+			<SidebarItem icon='communities_white' label='Communities' />
+			<SidebarItem icon='best_of_reddit_white' label='Best of Reddit' />
+			<SidebarItem icon='topics_white' label='Topics' />
+
+			<div className='line'></div>
+
+			<SidebarItem icon='content_policy_white' label='Content Policy' />
+			<SidebarItem icon='privacy_policy_white' label='Privacy Policy' />
+			<SidebarItem icon='user_agreement_white' label='User Agreement' />
 
 			<footer className='sidebar-footer'>
 				Reddit, Inc. © 2024. All rights reserved.
