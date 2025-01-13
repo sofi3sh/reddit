@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from "react";
+// import DropdownMenu from './DropdownMenu';
 
 // importing assets(images, etc...)
 import logo from '../../assets/images/logos/reddit-logo.svg';
@@ -10,6 +11,11 @@ import '../../assets/styles/Header/style.css';
 import SearchBar from '../../elements/SearchBar';
 
 function Header() {
+	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+	const toggleDropdown = () => {
+	  setIsDropdownOpen(!isDropdownOpen);
+	};
 	return (
 		<header className='header'>
 			<div className='container'>
@@ -59,6 +65,10 @@ function Header() {
 						<div className='header-link-button'>
 							<div className='profile'>
 								<a href='' className='header-link'>
+								{/* <button className="menu-button" onClick={toggleDropdown}>
+          							Menu
+        						</button>
+       								 {isDropdownOpen && <DropdownMenu />} */}
 									<img
 										alt='Profile picture with a pink background and a green status dot'
 										height='30'
