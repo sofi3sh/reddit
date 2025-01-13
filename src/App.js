@@ -12,6 +12,7 @@ import './assets/styles/App/style.css';
 
 // import pages
 import UserPage from './pages/Menu/UserPage';
+import CreatePost from './pages/CreatePost/CreatePost';
 
 const fetchData = async () => {
   try {
@@ -49,7 +50,6 @@ function App() {
                 </>
               }
             />
-
             <Route
               path="/contributor-program"
               element={
