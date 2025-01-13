@@ -13,6 +13,7 @@ import './assets/styles/App/style.css';
 // import pages
 import UserPage from './pages/Menu/UserPage';
 import CreatePost from './pages/CreatePost/CreatePost';
+import MainPage from './pages/MainPage/MainPage';
 
 const fetchData = async () => {
   try {
@@ -34,7 +35,7 @@ function App() {
         <div className='App' style={{ display: 'flex' }}>
           <Routes>
             <Route
-              path="/"
+              path="/userpage"
               element={
                 <>
                   <Sidebar />
@@ -81,6 +82,25 @@ function App() {
                 </>
               }
             />
+
+		<Route
+              path="/"
+              element={
+                <>
+                  <Sidebar />
+                  <div
+                    style={{
+                      padding: '0',
+                      flex: '1 1',
+                      height: '100vh',
+                    }}
+                  >
+                    <MainPage />
+                  </div>
+                </>
+              }
+            />
+
           </Routes>
         </div>
       </div>
