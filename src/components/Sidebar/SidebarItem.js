@@ -2,11 +2,12 @@
 import React from 'react';
 import icons from '../../iconLoader';
 
-const SidebarItem = ({ icon, label, active = false }) => {
+const SidebarItem = ({ icon, label, active = false, onClick}) => {
 	const iconPath = icons[icon];
 
 	return (
-		<div className={`sidebar-item ${active ? 'active' : ''}`}>
+		<div className={`sidebar-item ${active ? 'active' : ''}`}
+		onClick={onClick}>
 			{iconPath ? (
 				<img
 					src={iconPath}

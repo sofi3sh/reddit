@@ -1,0 +1,112 @@
+.dropdown-menu {
+    position: absolute;
+    width: 240px;
+    background-color: var(--color-azure-6, #0E1113);
+    color: var(--color-white, #fff);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    font-family: "Liberation Sans", sans-serif;
+    top: 6%;
+    right: 1%;
+  }
+  
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #181c1f;
+  }
+  
+  .dropdown-item.profile {
+    padding: 16px;
+    border-bottom: 1px solid var(--color-white-98, rgba(255, 255, 255, 0.1));
+  }
+  
+  .dropdown-profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+  
+  .dropdown-profile-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dropdown-item-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--color-azure-89, #DBE4E9);
+  }
+  
+  .dropdown-item-subtext {
+    font-size: 12px;
+    color: var(--color-grey-67, #ACACAC);
+  }
+  
+  .sidebar-item-icon {
+    font-size: 20px;
+    margin-right: 12px;
+    color: inherit;
+  }
+  
+  .line {
+    height: 1px;
+    background: var(--color-white-98, rgba(255, 255, 255, 0.1));
+    margin: 8px 16px;
+  }
+  
+  .switch {
+    margin-left: auto;
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+  
+  .switch input:checked + .slider {
+    background-color: #0079d3;
+  }
+  
+  .switch input:checked + .slider:before {
+    transform: translateX(14px);
+  }
+  
