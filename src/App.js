@@ -7,6 +7,7 @@ import './assets/styles/App/style.css';
 
 // import pages
 import UserPage from './pages/Menu/UserPage';
+import CreatePost from './pages/CreatePost/CreatePost';
 
 function App() {
 	return (
@@ -22,7 +23,9 @@ function App() {
 						height: '100vh',
 					}}
 				>
-					 <UserPage />
+					{/* <UserPage /> */}
+
+					<CreatePost />
 				</div>
 			</div>
 		</>
