@@ -13,6 +13,7 @@ import './assets/styles/App/style.css';
 // import pages
 import UserPage from './pages/Menu/UserPage';
 import CreatePost from './pages/CreatePost/CreatePost';
+import MainPage from './pages/MainPage/MainPage';
 
 const fetchData = async () => {
 	try {
@@ -24,85 +25,86 @@ const fetchData = async () => {
 };
 
 function App() {
-	useEffect(() => {
-		fetchData();
-	}, []);
-	return (
-		<Router>
-			<div>
-				<Header />
-				<div className='App' style={{ display: 'flex' }}>
-					<Routes>
-						<Route
-							path='/'
-							element={
-								<>
-									<Sidebar />
-									<div
-										style={{
-											padding: '0',
-											flex: '1 1',
-											height: '100vh',
-										}}
-									>
-										<UserPage />
-									</div>
-								</>
-							}
-						/>
-						<Route
-							path='/contributor-program'
-							element={
-								<div
-									style={{
-										flex: '1 1',
-										height: '100vh',
-									}}
-								>
-									<ContributorProgramPage />
-								</div>
-							}
-						/>
+  useEffect(() => {
+    fetchData();
+  }, []);
+  return (
+    <Router>
+      <div>
+        <Header />
+        <div className='App' style={{ display: 'flex' }}>
+          <Routes>
+            <Route
+              path="/userpage"
+              element={
+                <>
+                  <Sidebar />
+                  <div
+                    style={{
+                      padding: '0',
+                      flex: '1 1',
+                      height: '100vh',
+                    }}
+                  >
+                    <UserPage />
+                  </div>
+                </>
+              }
+            />
+            <Route
+              path="/contributor-program"
+              element={
+                <div
+                  style={{
+                    flex: '1 1',
+                    height: '100vh',
+                  }}
+                >
+                  <ContributorProgramPage />
+                </div>
+              }
+            />
+            
+            <Route
+              path="/settings"
+              element={
+                <>
+                  <Sidebar />
+                  <div
+                    style={{
+                      padding: '0',
+                      flex: '1 1',
+                      height: '100vh',
+                    }}
+                  >
+                    <SettingsPage />
+                  </div>
+                </>
+              }
+            />
 
-						<Route
-							path='/settings'
-							element={
-								<>
-									<Sidebar />
-									<div
-										style={{
-											padding: '0',
-											flex: '1 1',
-											height: '100vh',
-										}}
-									>
-										<SettingsPage />
-									</div>
-								</>
-							}
-						/>
+		<Route
+              path="/"
+              element={
+                <>
+                  <Sidebar />
+                  <div
+                    style={{
+                      padding: '0',
+                      flex: '1 1',
+                      height: '100vh',
+                    }}
+                  >
+                    <MainPage />
+                  </div>
+                </>
+              }
+            />
 
-						<Route
-							path='/createPost'
-							element={
-								<>
-									<Sidebar />
-									<div
-										style={{
-											padding: '0',
-											flex: '1 1',
-											height: '100vh',
-										}}
-									>
-										<CreatePost />
-									</div>
-								</>
-							}
-						/>
-					</Routes>
-				</div>
-			</div>
-		</Router>
-	);
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  );
 }
 export default App;
