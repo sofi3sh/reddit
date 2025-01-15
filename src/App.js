@@ -1,11 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Sidebar from './components/Sidebar/Sidebar';
 import Header from './components/Header';
-import ContributorProgramPage from "./components/ContributorProgramPage/ContributorProgramPage";
-import SettingsPage from "./components/SettingsPage/SettingsPage";
-import axios from "axios";
-import { useEffect } from "react";
+import ContributorProgramPage from './components/ContributorProgramPage/ContributorProgramPage';
+import SettingsPage from './components/SettingsPage/SettingsPage';
+import axios from 'axios';
+import { useEffect } from 'react';
 
 // importing styles
 import './assets/styles/App/style.css';
@@ -16,12 +16,12 @@ import CreatePost from './pages/CreatePost/CreatePost';
 import MainPage from './pages/MainPage/MainPage';
 
 const fetchData = async () => {
-  try {
-      const response = await axios.get("http://127.0.0.1:8000/api/user");
-      console.log(response.data);
-  } catch (error) {
-      console.error("Error fetching data:", error);
-  }
+	try {
+		const response = await axios.get('http://127.0.0.1:8000/api/user');
+		console.log(response.data);
+	} catch (error) {
+		console.error('Error fetching data:', error);
+	}
 };
 
 function App() {
