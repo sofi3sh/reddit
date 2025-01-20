@@ -1,11 +1,11 @@
-.create-post {
+.update-post {
 	width: 100%;
 	height: 100%;
 	display: flex;
 	justify-content: center;
 }
 
-.create-post-wrapper {
+.update-post-wrapper {
 	width: 1120px;
 }
 
@@ -51,7 +51,6 @@ form {
 	padding: 1rem;
 	font-size: 1rem;
 	border: 1px solid #3e4142;
-	color: #fff;
 	border-radius: 16px;
 	background: transparent;
 	outline: none;
@@ -120,4 +119,8 @@ textarea:focus {
 
 .community-drop-menu:hover {
 	background-color: #333d42;
+}
+
+.select-wrapper {
+	margin-bottom: 1rem;
 }

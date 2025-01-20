@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 // import DropdownMenu from './DropdownMenu';
 
 // importing assets(images, etc...)
@@ -14,13 +14,13 @@ function Header() {
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
 	const toggleDropdown = () => {
-	  setIsDropdownOpen(!isDropdownOpen);
+		setIsDropdownOpen(!isDropdownOpen);
 	};
 	return (
 		<header className='header'>
 			<div className='container'>
 				<div className='header-logo'>
-					<a href='#' className='reddit-logo'>
+					<a href='/' className='reddit-logo'>
 						<span className='logo'>
 							<img height={50} width={120} src={logo} alt='RedditLogo' />
 						</span>
@@ -49,7 +49,7 @@ function Header() {
 
 						<div className='header-link-button create-button'>
 							<div className='create'>
-								<a href='' className='header-link'>
+								<a href='/createPost' className='header-link'>
 									<i className='fa-regular fa-plus plus-icon'></i>
 									<span>Create</span>
 								</a>
@@ -64,8 +64,8 @@ function Header() {
 
 						<div className='header-link-button'>
 							<div className='profile'>
-								<a href='' className='header-link'>
-								{/* <button className="menu-button" onClick={toggleDropdown}>
+								<a href='/userpage' className='header-link'>
+									{/* <button className="menu-button" onClick={toggleDropdown}>
           							Menu
         						</button>
        								 {isDropdownOpen && <DropdownMenu />} */}

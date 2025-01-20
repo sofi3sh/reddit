@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 
 // importing styles
-import '../../assets/styles/CreatePost/style.css';
+import '../../assets/styles/UpdatePost/style.css';
 
 // importing elements
 import Button from '../../elements/Button';
 import ButtonDropMenu from '../../elements/ButtonDropMenu';
 
-const CreatePostForm = () => {
+const UpdatePostForm = () => {
+	const location = useLocation();
+	const post_id = new URLSearchParams(location.search).get('id');
+
 	const [title, setTitle] = useState('');
 	const [content, setContent] = useState('');
 	const [loading, setLoading] = useState(false);
@@ -19,20 +23,27 @@ const CreatePostForm = () => {
 	useEffect(() => {
 		const fetchCommunities = async () => {
 			try {
-				const response = await axios.get(
-					'http://127.0.0.1:8000/api/subreddit',
-					{
-						headers: {
-							Authorization: localStorage.getItem('apiKey'),
-						},
-					}
-				);
+				const response = await axios.get('http://127.0.0.1:8000/api/subreddit');
 				setCommunities(response.data);
 			} catch (error) {
 				console.error('Error fetching communities:', error);
 			}
 		};
 
+		const fetchPost = async () => {
+			try {
+				const response = await axios.get(
+					'http://127.0.0.1:8000/api/post/' + post_id
+				);
+				setTitle(response.data.title);
+				setContent(response.data.content);
+				setSelectedCommunity(response.data.subreddit_id);
+			} catch (error) {
+				console.error('Error fetching communities:', error);
+			}
+		};
+
+		fetchPost();
 		fetchCommunities();
 	}, []);
 
@@ -51,29 +62,24 @@ const CreatePostForm = () => {
 		try {
 			setLoading(true);
 
-			const response = await axios.post('http://127.0.0.1:8000/api/post', {
-				headers: {
-					Authorization: localStorage.getItem('apiKey'),
-				},
-				title: title,
-				content: content,
-				user_id: localStorage.getItem('user_id'),
-				subreddit_id: selectedCommunity,
-				created_at: null,
-				updated_at: null,
-				upvotes: 0,
-				downvotes: 0,
-				comment_count: 0,
-			});
+			const response = await axios.patch(
+				'http://127.0.0.1:8000/api/post/' + post_id,
+				{
+					title: title,
+					content: content,
+					user_id: 1,
+					subreddit_id: selectedCommunity,
+				}
+			);
 
-			console.log('Post created:', response.data);
-			alert('Post created successfully!');
+			console.log('Post updated!:', response.data);
+			alert('Post updated successfully!');
 
 			setTitle('');
 			setContent('');
 		} catch (error) {
-			console.error('Error creating post:', error);
-			alert('Failed to create the post. Please try again.');
+			console.error('Error updating post:', error);
+			alert('Failed to update the post. Please try again.');
 		} finally {
 			setLoading(false);
 		}
@@ -81,7 +87,7 @@ const CreatePostForm = () => {
 
 	return (
 		<>
-			<div>
+			<div className='select-wrapper'>
 				<select
 					name='subreddit_id'
 					id=''
@@ -96,54 +102,6 @@ const CreatePostForm = () => {
 						</option>
 					))}
 				</select>
-			</div>
-
-			<div className='options'>
-				<Button
-					text='Text'
-					backgroundColor='transparent'
-					hoverBackgroundColor='#333d42'
-					borderRadius='none'
-					padding='1rem 1rem'
-					fontSize='0.9rem'
-					activeBorderBottom='3px solid #648efc'
-					activeBackgroundColor='transparent'
-					active
-				/>
-
-				<Button
-					text='Images & Video'
-					backgroundColor='transparent'
-					hoverBackgroundColor='#333d42'
-					borderRadius='none'
-					padding='1rem 1rem'
-					fontSize='0.9rem'
-					activeBorderBottom='3px solid #648efc'
-					activeBackgroundColor='transparent'
-				/>
-
-				<Button
-					text='Link'
-					backgroundColor='transparent'
-					hoverBackgroundColor='#333d42'
-					borderRadius='none'
-					padding='1rem 1rem'
-					fontSize='0.9rem'
-					activeBorderBottom='3px solid #648efc'
-					activeBackgroundColor='transparent'
-				/>
-
-				<Button
-					text='Poll'
-					backgroundColor='transparent'
-					hoverBackgroundColor='#333d42'
-					borderRadius='none'
-					padding='1rem 1rem'
-					fontSize='0.9rem'
-					activeBorderBottom='3px solid #648efc'
-					activeBackgroundColor='transparent'
-					disabled
-				/>
 			</div>
 
 			<form onSubmit={handleSubmit}>
@@ -190,4 +148,4 @@ const CreatePostForm = () => {
 	);
 };
 
-export default CreatePostForm;
+export default UpdatePostForm;
