@@ -4,6 +4,8 @@ import React from 'react';
 import '../../../assets/styles/UserPage/style.css';
 
 const Header = () => {
+	const username = localStorage.getItem('username');
+
 	return (
 		<div className='main-container-header'>
 			<div className='user-avatar-wrapper'>
@@ -21,8 +23,8 @@ const Header = () => {
 
 			<div className='user-name-wrapper'>
 				<div className='user-name'>
-					<span className='user-name-text'>Low_Amoeba7719</span>
-					<span className='user-name-subtext'>u/Low_Amoeba7719</span>
+					<span className='user-name-text'>{username}</span>
+					<span className='user-name-subtext'>u/{username}</span>
 				</div>
 			</div>
 		</div>

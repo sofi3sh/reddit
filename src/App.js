@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from './components/Sidebar/Sidebar';
-import Header from './components/Header';
-import ContributorProgramPage from './components/ContributorProgramPage/ContributorProgramPage';
-import SettingsPage from './components/SettingsPage/SettingsPage';
+
 import axios from 'axios';
 import { useEffect } from 'react';
+
+//import components
+import Sidebar from './components/Sidebar/Sidebar';
+import Header from './components/Header';
 
 // importing styles
 import './assets/styles/App/style.css';
@@ -15,6 +16,9 @@ import UserPage from './pages/Menu/UserPage';
 import CreatePost from './pages/CreatePost/CreatePost';
 import EditPost from './pages/EditPost/EditPost';
 import MainPage from './pages/MainPage/MainPage';
+import Login from './pages/Login/Login';
+import ContributorProgramPage from './components/ContributorProgramPage/ContributorProgramPage';
+import SettingsPage from './components/SettingsPage/SettingsPage';
 
 const fetchData = async () => {
 	try {
@@ -133,6 +137,24 @@ function App() {
 										}}
 									>
 										<EditPost />
+									</div>
+								</>
+							}
+						/>
+
+						<Route
+							path='/login'
+							element={
+								<>
+									<Sidebar />
+									<div
+										style={{
+											padding: '0',
+											flex: '1 1',
+											height: '100vh',
+										}}
+									>
+										<Login />
 									</div>
 								</>
 							}

@@ -19,7 +19,14 @@ const CreatePostForm = () => {
 	useEffect(() => {
 		const fetchCommunities = async () => {
 			try {
-				const response = await axios.get('http://127.0.0.1:8000/api/subreddit');
+				const response = await axios.get(
+					'http://127.0.0.1:8000/api/subreddit',
+					{
+						headers: {
+							Authorization: localStorage.getItem('apiKey'),
+						},
+					}
+				);
 				setCommunities(response.data);
 			} catch (error) {
 				console.error('Error fetching communities:', error);
@@ -45,9 +52,12 @@ const CreatePostForm = () => {
 			setLoading(true);
 
 			const response = await axios.post('http://127.0.0.1:8000/api/post', {
+				headers: {
+					Authorization: localStorage.getItem('apiKey'),
+				},
 				title: title,
 				content: content,
-				user_id: 1,
+				user_id: localStorage.getItem('user_id'),
 				subreddit_id: selectedCommunity,
 				created_at: null,
 				updated_at: null,
