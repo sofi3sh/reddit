@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // importing components
 
@@ -6,6 +7,7 @@ const LoginForm = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [error, setError] = useState('');
+	const navigate = useNavigate();
 
 	const login = async (email, password) => {
 		try {
@@ -25,6 +27,7 @@ const LoginForm = () => {
 				localStorage.setItem('apiKey', data.api_key.api_key);
 				localStorage.setItem('user_id', data.user.id);
 				localStorage.setItem('username', data.user.name);
+				navigate('/');
 				alert('Login successful!');
 			} else {
 				setError(data.message || 'Failed to login. Please try again.');

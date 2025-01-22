@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // importing styles
 import '../../../../assets/styles/UserPage/style.css';
@@ -8,6 +9,12 @@ import Button from '../../../../elements/Button';
 import ButtonDropMenu from '../../../../elements/ButtonDropMenu';
 
 const Posts = () => {
+	const navigate = useNavigate();
+
+	const createPostHandler = () => {
+		navigate('/createPost');
+	};
+
 	return (
 		<>
 			<div className='actions'>
@@ -33,6 +40,7 @@ const Posts = () => {
 							}}
 						></i>
 					}
+					onClick={createPostHandler}
 				/>
 
 				<ButtonDropMenu

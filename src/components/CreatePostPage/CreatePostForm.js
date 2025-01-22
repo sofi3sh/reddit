@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 // importing styles
 import '../../assets/styles/CreatePost/style.css';
@@ -15,6 +16,8 @@ const CreatePostForm = () => {
 
 	const [communities, setCommunities] = useState([]);
 	const [selectedCommunity, setSelectedCommunity] = useState('');
+
+	const navigate = useNavigate();
 
 	useEffect(() => {
 		const fetchCommunities = async () => {
@@ -51,22 +54,28 @@ const CreatePostForm = () => {
 		try {
 			setLoading(true);
 
-			const response = await axios.post('http://127.0.0.1:8000/api/post', {
-				headers: {
-					Authorization: localStorage.getItem('apiKey'),
+			const response = await axios.post(
+				'http://127.0.0.1:8000/api/post',
+				{
+					title: title,
+					content: content,
+					user_id: localStorage.getItem('user_id'),
+					subreddit_id: selectedCommunity,
+					created_at: null,
+					updated_at: null,
+					upvotes: 0,
+					downvotes: 0,
+					comment_count: 0,
 				},
-				title: title,
-				content: content,
-				user_id: localStorage.getItem('user_id'),
-				subreddit_id: selectedCommunity,
-				created_at: null,
-				updated_at: null,
-				upvotes: 0,
-				downvotes: 0,
-				comment_count: 0,
-			});
+				{
+					headers: {
+						Authorization: localStorage.getItem('apiKey'),
+					},
+				}
+			);
 
 			console.log('Post created:', response.data);
+			navigate('/');
 			alert('Post created successfully!');
 
 			setTitle('');

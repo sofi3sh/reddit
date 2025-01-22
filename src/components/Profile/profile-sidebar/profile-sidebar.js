@@ -118,7 +118,7 @@ const ProfileSidebar = () => {
 						</span>
 
 						<ul className='settings'>
-							<li className='settings-item'>
+							<li className='user-settings-item'>
 								<div className='user-settings'>
 									<div className='settings-icon'>
 										<img
@@ -149,7 +149,7 @@ const ProfileSidebar = () => {
 								</div>
 							</li>
 
-							<li className='settings-item'>
+							<li className='user-settings-item'>
 								<div className='user-settings'>
 									<div className='settings-icon'>
 										<i className='fa-solid fa-shirt fa-lg'></i>
@@ -177,7 +177,7 @@ const ProfileSidebar = () => {
 								</div>
 							</li>
 
-							<li className='settings-item'>
+							<li className='user-settings-item'>
 								<div className='user-settings'>
 									<div className='settings-icon'>
 										<i className='fa-solid fa-shield fa-lg'></i>
