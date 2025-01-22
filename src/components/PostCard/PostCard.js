@@ -15,7 +15,13 @@ function PostCard({ post }) {
 		const fetchSubreddit = async () => {
 			try {
 				const response = await axios.get(
-					`http://127.0.0.1:8000/api/subreddit/show/${post.subreddit_id}`
+					`http://127.0.0.1:8000/api/subreddit/show/${post.subreddit_id}`,
+
+					{
+						headers: {
+							Authorization: localStorage.getItem('apiKey'),
+						},
+					}
 				);
 				setSubredditName(response.data.name);
 			} catch (error) {
@@ -33,8 +39,13 @@ function PostCard({ post }) {
 	const handleOptionClick = async option => {
 		console.log(option);
 		if (option === 'Delete') {
+			console.log(post.id);
 			try {
-				await axios.delete('http://127.0.0.1:8000/api/post/' + post.id);
+				await axios.delete('http://127.0.0.1:8000/api/post/' + post.id, {
+					headers: {
+						Authorization: localStorage.getItem('apiKey'),
+					},
+				});
 				alert('Post deleted successfully!');
 			} catch (error) {
 				console.error('Error deleting post:', error);

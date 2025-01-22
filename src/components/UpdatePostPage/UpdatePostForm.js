@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 // importing styles
@@ -20,10 +20,19 @@ const UpdatePostForm = () => {
 	const [communities, setCommunities] = useState([]);
 	const [selectedCommunity, setSelectedCommunity] = useState('');
 
+	const navigate = useNavigate();
+
 	useEffect(() => {
 		const fetchCommunities = async () => {
 			try {
-				const response = await axios.get('http://127.0.0.1:8000/api/subreddit');
+				const response = await axios.get(
+					'http://127.0.0.1:8000/api/subreddit',
+					{
+						headers: {
+							Authorization: localStorage.getItem('apiKey'),
+						},
+					}
+				);
 				setCommunities(response.data);
 			} catch (error) {
 				console.error('Error fetching communities:', error);
@@ -33,7 +42,12 @@ const UpdatePostForm = () => {
 		const fetchPost = async () => {
 			try {
 				const response = await axios.get(
-					'http://127.0.0.1:8000/api/post/' + post_id
+					'http://127.0.0.1:8000/api/post/' + post_id,
+					{
+						headers: {
+							Authorization: localStorage.getItem('apiKey'),
+						},
+					}
 				);
 				setTitle(response.data.title);
 				setContent(response.data.content);
@@ -69,10 +83,16 @@ const UpdatePostForm = () => {
 					content: content,
 					user_id: 1,
 					subreddit_id: selectedCommunity,
+				},
+				{
+					headers: {
+						Authorization: localStorage.getItem('apiKey'),
+					},
 				}
 			);
 
 			console.log('Post updated!:', response.data);
+			navigate('/');
 			alert('Post updated successfully!');
 
 			setTitle('');
